@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Литературная терапия | Юнгианский книжный клуб</title>
+
+<meta name="description" content="Литературная терапия — юнгианский книжный клуб для глубокого чтения, исследования символов и самопознания через литературу.">
+
+<meta property="og:title" content="Литературная терапия">
+<meta property="og:description" content="Читаем книги. Исследуем символы. Узнаём себя.">
+<meta property="og:image" content="logo.jpg">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="logo.jpg">
+
+<style>
+
+:root{
+    --bg:#f8f5ef;
+    --card:#ffffff;
+    --text:#2e3b4e;
+    --accent:#8b6f47;
+    --blue:#6f879f;
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family: "Georgia", serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.7;
+}
+
+.container{
+    width:min(1100px,90%);
+    margin:auto;
+}
+
+section{
+    padding:80px 0;
+}
+
+h1,h2,h3{
+    line-height:1.2;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:2.2rem;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.hero-content{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.hero img{
+    width:100%;
+    border-radius:24px;
+    box-shadow:var(--shadow);
+}
+
+.hero-text h1{
+    font-size:3.3rem;
+    margin-bottom:15px;
+}
+
+.hero-type{
+    color:var(--blue);
+    font-size:1.25rem;
+    margin-bottom:12px;
+    font-weight:500;
+    letter-spacing:.3px;
+}
+
+.subtitle{
+    font-size:1.3rem;
+    color:var(--blue);
+    margin-bottom:10px;
+}
+
+.tagline{
+    color:var(--accent);
+    font-style:italic;
+    margin-bottom:25px;
+}
+
+.hero-text p{
+    margin-bottom:25px;
+    font-size:1.1rem;
+}
+
+.btn{
+    display:inline-block;
+    background:var(--accent);
+    color:white;
+    text-decoration:none;
+    padding:14px 26px;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.about{
+    background:white;
+}
+
+.about p{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+    font-size:1.1rem;
+}
+
+.books-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:var(--card);
+    padding:30px;
+    border-radius:18px;
+    box-shadow:var(--shadow);
+}
+
+.book-placeholder{
+    height:220px;
+    background:#ece7de;
+    border-radius:12px;
+    margin-bottom:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#888;
+}
+
+.book-cover{
+    width:140px;
+    height:220px;
+    object-fit:contain;
+    display:block;
+    margin:0 auto 20px;
+}
+
+.next-reading{
+    background:white;
+}
+
+.featured{
+    max-width:700px;
+    margin:auto;
+    text-align:center;
+    padding:40px;
+    border-radius:24px;
+    background:linear-gradient(
+        135deg,
+        #ffffff,
+        #f4efe7
+    );
+    box-shadow:var(--shadow);
+}
+
+.featured h3{
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+.telegram-section{
+    text-align:center;
+}
+
+.telegram-section p{
+    max-width:700px;
+    margin:0 auto 25px;
+}
+
+.podcast-card{
+    max-width:700px;
+    margin:auto;
+    text-align:center;
+    background:white;
+    padding:40px;
+    border-radius:24px;
+    box-shadow:var(--shadow);
+}
+
+footer{
+    background:#243142;
+    color:white;
+    text-align:center;
+    padding:50px 20px;
+}
+
+footer a{
+    color:#fff;
+}
+
+.fade{
+    opacity:0;
+    transform:translateY(20px);
+    transition:1s;
+}
+
+.fade.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@media(max-width:900px){
+
+.hero{
+    padding:50px 0;
+}
+
+.hero-content{
+    grid-template-columns:1fr;
+}
+
+.hero-text{
+    text-align:center;
+}
+
+.hero-text h1{
+    font-size:2.8rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+
+<div>
+<img src="logo.jpg" alt="Литературная терапия">
+</div>
+
+<div class="hero-text">
+
+<h1>Литературная терапия</h1>
+
+<p class="hero-type">
+Юнгианский книжный клуб
+</p>
+
+<div class="tagline">
+Читаем книги. Исследуем символы. Узнаём себя.
+</div>
+
+<p>
+В формате юнгианского книжного клуба мы практикуем вдумчивое чтение,
+чтобы услышать отголоски собственной души в историях героев.
+Это пространство для развития символического мышления и глубокого понимания:
+себя, своих поступков и мотивов окружающих.
+</p>
+
+<a class="btn"
+href="https://t.me/litera_therapy"
+target="_blank">
+Перейти в Telegram
+</a>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="about fade">
+<div class="container">
+
+<h2>О проекте</h2>
+
+<p>
+Мы читаем художественную литературу через призму аналитической психологии Карла Юнга.
+Вместе исследуем символы, архетипы, внутренние конфликты и процессы личностного роста,
+отражённые в книгах и судьбах героев.
+Литература становится пространством диалога с собой,
+а совместное обсуждение помогает увидеть новые смыслы и глубже понять собственный жизненный путь.
+</p>
+
+</div>
+</section>
+
+<section class="fade">
+<div class="container">
+
+<h2>Уже прочитали</h2>
+
+<div class="books-grid">
+
+<div class="card">
+
+<img
+    src="chemical-wedding.jpg"
+    alt="Химическая свадьба"
+    class="book-cover">
+
+<h3>Химическая свадьба</h3>
+
+<p><strong>Линдсей Кларк</strong></p>
+
+<p>
+Алхимическое путешествие души через символы любви,
+смерти, преображения и обретения внутренней целостности.
+</p>
+
+</div>
+
+<div class="card">
+
+<img
+    src="women-who-run-with-wolves.jpg"
+    alt="Бегущая с волками"
+    class="book-cover">
+
+<h3>Бегущая с волками</h3>
+
+<p><strong>Кларисса Пинкола Эстес</strong></p>
+
+<p>
+Исследование архетипа Дикой Женщины через мифы,
+сказки и коллективное бессознательное.
+</p>
+
+</div>
+
+</div>
+
+</div>
+</section>
+<section class="next-reading fade">
+<div class="container">
+
+<h2>Следующее чтение</h2>
+
+<div class="featured">
+
+<h3>Герман Гессе — «Демиан»</h3>
+
+<p style="margin:20px 0;">
+Приглашаем присоединиться к следующему циклу чтения и обсуждения романа Германа Гессе.
+Это история о взрослении, поиске себя и встрече со своей внутренней тенью.
+</p>
+
+<a class="btn"
+target="_blank"
+href="https://t.me/ninasun22?text=Здравствуйте!%20Хочу%20записаться%20на%20чтение%20Демиана.">
+Записаться через Telegram
+</a>
+
+</div>
+
+</div>
+</section>
+
+<section class="telegram-section fade">
+<div class="container">
+
+<h2>Наш Telegram</h2>
+
+<p>
+Анонсы встреч, рекомендации книг, размышления о символах и архетипах
+публикуются в Telegram-канале проекта.
+</p>
+
+<a class="btn"
+target="_blank"
+href="https://t.me/litera_therapy">
+Перейти в канал
+</a>
+
+</div>
+</section>
+
+<section class="fade">
+<div class="container">
+
+<h2>Подкасты</h2>
+
+<div class="podcast-card">
+
+<p>
+Мы начинаем серию подкастов о литературе, символическом мышлении
+и аналитической психологии.
+Здесь будут появляться записи обсуждений и размышления о книгах.
+</p>
+
+<br>
+
+<a class="btn"
+target="_blank"
+href="https://litera-therapy.mave.digital/">
+Слушать на Mave
+</a>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+
+<h3>Литературная терапия</h3>
+
+<p>
+<a href="https://t.me/litera_therapy">
+Telegram-канал
+</a>
+</p>
+
+<p>
+<a href="https://t.me/ninasun22">
+Связаться с организатором
+</a>
+</p>
+
+<br>
+
+<p>© 2026 Литературная терапия</p>
+
+</footer>
+
+<script>
+
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add('visible');
+}
+});
+});
+
+document.querySelectorAll('.fade').forEach(el=>{
+observer.observe(el);
+});
+
+</script>
+
+</body>
+</html>
