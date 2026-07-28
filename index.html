@@ -4,12 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Литературная терапия | Юнгианский книжный клуб</title>
+<title>Литературная терапия </title>
 
-<meta name="description" content="Литературная терапия — юнгианский книжный клуб для глубокого чтения, исследования символов и самопознания через литературу.">
+<meta name="description" content="Литературная терапия (чтение с психологами) — это метод самопознания и самопомощи.   
+Через чтение художественной литературы развиваем навык экологично проживать собственные истории, распознавая чувства, формируя новый взгляд на старые сложности.">
 
 <meta property="og:title" content="Литературная терапия">
-<meta property="og:description" content="Читаем книги. Исследуем символы. Узнаём себя.">
+<meta property="og:description" content="Читаем книги. Исследуем символы. Узнаем себя.">
 <meta property="og:image" content="logo.jpg">
 <meta property="og:type" content="website">
 
@@ -36,11 +37,78 @@ html{
     scroll-behavior:smooth;
 }
 
-body{
+body {
     font-family: "Georgia", serif;
     background:var(--bg);
     color:var(--text);
     line-height:1.7;
+}
+
+/* ========================================
+   ВЕРХНЕЕ МЕНЮ
+======================================== */
+
+.site-nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(248,245,239,.95);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(46,59,78,.08);
+}
+
+.nav-container{
+    width:min(1100px,90%);
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:28px;
+    padding:14px 0;
+}
+
+.site-nav a{
+    color:var(--text);
+    text-decoration:none;
+    font-size:.95rem;
+    transition:.3s;
+    white-space:nowrap;
+}
+
+.site-nav a:hover{
+    color:var(--accent);
+}
+
+
+/* ========================================
+   МЕНЮ НА ПЛАНШЕТЕ И ТЕЛЕФОНЕ
+======================================== */
+
+@media(max-width:900px){
+
+.nav-container{
+    gap:18px;
+    flex-wrap:wrap;
+    padding:12px 0;
+}
+
+.site-nav a{
+    font-size:.9rem;
+}
+
+}
+
+
+@media(max-width:600px){
+
+.nav-container{
+    gap:10px 18px;
+}
+
+.site-nav a{
+    font-size:.85rem;
+}
+
 }
 
 .container{
@@ -126,15 +194,137 @@ h2{
     transform:translateY(-2px);
 }
 
+/* ===== О ПРОЕКТЕ ===== */
+
 .about{
     background:white;
 }
 
-.about p{
-    max-width:800px;
-    margin:auto;
-    text-align:center;
+.about-content{
+    max-width:900px;
+    margin:0 auto;
+}
+
+.about-intro{
+    max-width:850px;
+    margin:0 auto 45px;
+}
+
+.about-intro p{
+    margin-bottom:22px;
     font-size:1.1rem;
+    line-height:1.8;
+}
+
+.about-definition{
+    max-width:850px;
+    margin:35px auto 50px;
+    padding:30px 35px;
+    background:#f8f5ef;
+    border-left:4px solid var(--accent);
+    border-radius:0 16px 16px 0;
+}
+
+.about-definition p{
+    margin:0;
+    font-size:1.15rem;
+    line-height:1.8;
+}
+
+.about-definition strong{
+    color:var(--accent);
+}
+
+.about-process-title{
+    text-align:center;
+    margin-bottom:30px;
+    font-size:1.8rem;
+}
+
+.about-steps{
+    display:grid;
+    gap:18px;
+    max-width:850px;
+    margin:0 auto 50px;
+}
+
+.about-step{
+    display:grid;
+    grid-template-columns:70px 1fr;
+    gap:20px;
+    align-items:start;
+    padding:25px 28px;
+    background:#f8f5ef;
+    border-radius:16px;
+    transition:.3s;
+}
+
+.about-step:hover{
+    transform:translateY(-2px);
+    box-shadow:var(--shadow);
+}
+
+.step-number{
+    font-family:Georgia, serif;
+    font-size:1.4rem;
+    color:var(--accent);
+    font-weight:bold;
+    padding-top:2px;
+}
+
+.about-step p{
+    margin:0;
+    font-size:1.05rem;
+    line-height:1.75;
+}
+
+.about-conclusion{
+    max-width:850px;
+    margin:0 auto;
+    padding-top:10px;
+}
+
+.about-conclusion p{
+    margin-bottom:22px;
+    font-size:1.1rem;
+    line-height:1.8;
+}
+
+.about-conclusion p:last-child{
+    margin-bottom:0;
+    font-style:italic;
+    color:var(--accent);
+    font-size:1.2rem;
+}
+
+/* Адаптация для телефона */
+
+@media(max-width:600px){
+
+.about-intro p,
+.about-definition p,
+.about-conclusion p{
+    font-size:1rem;
+}
+
+.about-definition{
+    padding:25px 22px;
+}
+
+.about-step{
+    grid-template-columns:1fr;
+    gap:8px;
+    padding:22px;
+}
+
+.step-number{
+    font-size:1.2rem;
+}
+
+.about-process-title{
+    font-size:1.6rem;
+}
+
 }
 
 .books-grid{
@@ -148,6 +338,13 @@ h2{
     padding:30px;
     border-radius:18px;
     box-shadow:var(--shadow);
+}
+
+.book-note{
+    color:var(--blue);
+    font-size:.95rem;
+    font-style:italic;
+    margin:20px 0;
 }
 
 .book-placeholder{
@@ -169,29 +366,6 @@ h2{
     margin:0 auto 20px;
 }
 
-.next-reading{
-    background:white;
-}
-
-.featured{
-    max-width:700px;
-    margin:auto;
-    text-align:center;
-    padding:40px;
-    border-radius:24px;
-    background:linear-gradient(
-        135deg,
-        #ffffff,
-        #f4efe7
-    );
-    box-shadow:var(--shadow);
-}
-
-.featured h3{
-    font-size:2rem;
-    margin-bottom:10px;
-}
-
 .telegram-section{
     text-align:center;
 }
@@ -209,6 +383,13 @@ h2{
     padding:40px;
     border-radius:24px;
     box-shadow:var(--shadow);
+}
+
+.podcast-player{
+    margin:20px 0 25px;
+    width:100%;
+    overflow:hidden;
+    border-radius:12px;
 }
 
 footer{
@@ -231,6 +412,334 @@ footer a{
 .fade.visible{
     opacity:1;
     transform:translateY(0);
+}
+
+/* ========================================
+   О ГЛУБИННОМ ЧТЕНИИ
+======================================== */
+
+.deep-reading{
+    background:var(--bg);
+}
+
+.deep-reading-content{
+    max-width:900px;
+    margin:0 auto;
+}
+
+.deep-reading-intro p{
+    font-size:1.1rem;
+    line-height:1.8;
+    margin-bottom:22px;
+}
+
+.deep-reading-layers{
+    display:grid;
+    gap:15px;
+    max-width:800px;
+    margin:45px auto;
+}
+
+.reading-layer{
+    display:grid;
+    grid-template-columns:70px 1fr;
+    align-items:center;
+    gap:20px;
+    padding:22px 28px;
+    background:white;
+    border-radius:16px;
+    box-shadow:var(--shadow);
+}
+
+.layer-number{
+    font-size:1.3rem;
+    color:var(--accent);
+    font-weight:bold;
+}
+
+.layer-text{
+    font-size:1.1rem;
+}
+
+.deep-reading-conclusion{
+    max-width:850px;
+    margin:40px auto 0;
+    padding:30px 35px;
+    background:white;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+}
+
+.deep-reading-conclusion p{
+    font-size:1.1rem;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.deep-reading-conclusion p:last-child{
+    margin-bottom:0;
+}
+
+.deep-reading-principles{
+    margin-top:40px;
+}
+
+.deep-reading-principles h3{
+    text-align:center;
+    font-size:1.8rem;
+    margin-bottom:30px;
+}
+
+.principles-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.principle{
+    background:white;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:var(--shadow);
+    font-size:1.05rem;
+}
+
+.principle-number{
+    display:block;
+    color:var(--accent);
+    font-weight:bold;
+    font-size:1.2rem;
+    margin-bottom:8px;
+}
+
+
+/* ========================================
+   КАК НАУЧИТЬСЯ ГЛУБИННОМУ ЧТЕНИЮ
+======================================== */
+
+.learning{
+    background:white;
+}
+
+.learning-intro{
+    max-width:750px;
+    margin:0 auto 45px;
+    text-align:center;
+    font-size:1.1rem;
+}
+
+.learning-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+    max-width:850px;
+    margin:0 auto;
+}
+
+.learning-card{
+    background:var(--bg);
+    padding:35px 30px;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+    display:flex;
+    flex-direction:column;
+}
+
+.learning-card h3{
+    font-size:1.45rem;
+    margin-bottom:18px;
+}
+
+.learning-card p{
+    margin-bottom:15px;
+}
+
+.learning-card ul{
+    margin:10px 0 20px 20px;
+}
+
+.learning-card li{
+    margin-bottom:8px;
+}
+
+.learning-highlight{
+    color:var(--accent);
+    font-weight:bold;
+}
+
+.learning-card .btn{
+    margin-top:auto;
+    text-align:center;
+    align-self:flex-start;
+}
+
+.learning-card.podcast-card-new{
+    background:linear-gradient(
+        135deg,
+        #ffffff,
+        #f4efe7
+    );
+}
+
+.coming-soon{
+    display:inline-block;
+    color:var(--accent);
+    font-weight:bold;
+    letter-spacing:1px;
+    margin-bottom:15px;
+}
+
+.upcoming-reading{
+    max-width:850px;
+    margin:50px auto 0;
+    padding:40px;
+    text-align:center;
+    background:linear-gradient(
+        135deg,
+        #ffffff,
+        #f4efe7
+    );
+    border-radius:24px;
+    box-shadow:var(--shadow);
+}
+
+.upcoming-reading h3{
+    color:var(--accent);
+    font-size:1rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:12px;
+}
+
+.upcoming-reading h4{
+    font-size:2rem;
+    margin-bottom:15px;
+}
+
+
+/* ========================================
+   О НАС
+======================================== */
+
+.about-us{
+    background:var(--bg);
+}
+
+.psychologists-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+    max-width:900px;
+    margin:0 auto;
+}
+
+.psychologist-card{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+    text-align:center;
+}
+
+.psychologist-photo{
+    width:150px;
+    height:150px;
+    margin:0 auto 25px;
+    border-radius:50%;
+    background:#ece7de;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#888;
+    font-size:.9rem;
+}
+
+.psychologist-card h3{
+    font-size:1.5rem;
+    margin-bottom:12px;
+}
+
+.psychologist-role{
+    color:var(--blue);
+    margin-bottom:20px;
+}
+
+.psychologist-card p{
+    margin-bottom:15px;
+}
+
+.psychologist-card .btn{
+    margin-top:10px;
+}
+
+
+/* ========================================
+   АДАПТАЦИЯ НОВЫХ РАЗДЕЛОВ ДЛЯ ПЛАНШЕТА
+======================================== */
+
+@media(max-width:900px){
+
+.learning-grid{
+    grid-template-columns:1fr;
+}
+
+.learning-card{
+    padding:30px;
+}
+
+.psychologists-grid{
+    grid-template-columns:1fr;
+    max-width:600px;
+}
+
+}
+
+
+/* ========================================
+   АДАПТАЦИЯ НОВЫХ РАЗДЕЛОВ ДЛЯ ТЕЛЕФОНА
+======================================== */
+
+@media(max-width:600px){
+
+.deep-reading-intro p,
+.deep-reading-conclusion p{
+    font-size:1rem;
+}
+
+.reading-layer{
+    grid-template-columns:1fr;
+    gap:8px;
+    padding:22px;
+}
+
+.layer-number{
+    font-size:1.1rem;
+}
+
+.layer-text{
+    font-size:1rem;
+}
+
+.deep-reading-conclusion{
+    padding:25px 22px;
+}
+
+.principles-list{
+    grid-template-columns:1fr;
+}
+
+.deep-reading-principles h3{
+    font-size:1.5rem;
+}
+
+.learning-intro{
+    font-size:1rem;
+}
+
+.psychologist-card{
+    padding:30px 22px;
+}
+
 }
 
 @media(max-width:900px){
@@ -257,6 +766,38 @@ footer a{
 </head>
 
 <body>
+<nav class="site-nav">
+
+<div class="nav-container">
+
+<a href="#about">
+О проекте
+</a>
+
+<a href="#deep-reading">
+Глубинное чтение
+</a>
+
+<a href="#learning">
+Обучение
+</a>
+
+<a href="#about-us">
+О нас
+</a>
+
+<a href="#books">
+Книги
+</a>
+
+<a href="#podcasts">
+Подкасты
+</a>
+
+</div>
+
+</nav>
+
 <section class="hero">
 <div class="container">
 <div class="hero-content">
@@ -270,18 +811,16 @@ footer a{
 <h1>Литературная терапия</h1>
 
 <p class="hero-type">
-Юнгианский книжный клуб
+Чтение с психологами
 </p>
 
 <div class="tagline">
-Читаем книги. Исследуем символы. Узнаём себя.
+Читаем книги. Исследуем символы. Узнаем себя.
 </div>
 
 <p>
-В формате юнгианского книжного клуба мы практикуем вдумчивое чтение,
-чтобы услышать отголоски собственной души в историях героев.
-Это пространство для развития символического мышления и глубокого понимания:
-себя, своих поступков и мотивов окружающих.
+Литературная терапия (чтение с психологами) — это метод самопознания и самопомощи.   
+Через чтение художественной литературы мы развиваем навык экологично проживать собственные истории, распознавая чувства, формируя новый взгляд на старые сложности.
 </p>
 
 <a class="btn"
@@ -296,23 +835,416 @@ target="_blank">
 </div>
 </section>
 
-<section class="about fade">
+<section class="about fade" id="about">
 <div class="container">
 
 <h2>О проекте</h2>
 
+<div class="about-content">
+
+<div class="about-intro">
+
 <p>
-Мы читаем художественную литературу через призму аналитической психологии Карла Юнга.
-Вместе исследуем символы, архетипы, внутренние конфликты и процессы личностного роста,
-отражённые в книгах и судьбах героев.
-Литература становится пространством диалога с собой,
-а совместное обсуждение помогает увидеть новые смыслы и глубже понять собственный жизненный путь.
+Все, что с нами происходит, — это истории. Мы проживаем свои истории,
+рассказываем друг другу истории и в разных вариантах интересуемся историями.
+Любая книга содержит историю.
+</p>
+
+<p>
+Парадокс в том, что одну и ту же историю разные люди проживают по-разному.
+И эта разница проистекает из индивидуальной психологии каждого человека.
+С другой стороны, хорошая книга с хорошей интересной историей может стать
+проводником в наш собственный внутренний мир, который всегда интересен,
+уникален, наполнен не менее драматичными и захватывающими историями,
+чем лучшие бестселлеры.
+</p>
+
+<p>
+Задача проекта — популяризировать медленное рефлексивное чтение
+как способ самопознания и психологического развития.
 </p>
 
 </div>
-</section>
 
-<section class="fade">
+
+<div class="about-definition">
+
+<p>
+<strong>Литературная терапия</strong> — это процесс познания собственного
+внутреннего мира и исцеления его посредством чтения книг.
+</p>
+
+</div>
+
+
+<h3 class="about-process-title">
+Как это происходит?
+</h3>
+
+
+<div class="about-steps">
+
+<div class="about-step">
+
+<div class="step-number">01</div>
+
+<p>
+Мы открываем свое воображение для событий, персонажей и их переживаний,
+описанных в книге.
+</p>
+
+</div>
+
+
+<div class="about-step">
+
+<div class="step-number">02</div>
+
+<p>
+Читая текст, мы прислушиваемся к собственному внутреннему состоянию.
+Какие-то эпизоды вызывают в нас сильный отклик: он может быть окрашен
+как позитивными, так и негативными эмоциями, сопровождаться телесными
+реакциями. Это значит, что какая-то часть нашей психики срезонировала
+с произведением.
+</p>
+
+</div>
+
+
+<div class="about-step">
+
+<div class="step-number">03</div>
+
+<p>
+Если мы отрефлексируем этот внутренний отклик, он может принести нам
+неожиданные ассоциации с прошлым или настоящим, связать то, что происходит
+в книге, с нашим собственным опытом.
+</p>
+
+</div>
+
+
+<div class="about-step">
+
+<div class="step-number">04</div>
+
+<p>
+Если такого рода вдумчивое чтение становится привычкой, оно может стать
+целительным для нашей психики. Соединяясь с чувствами и историями героев,
+а затем отделяясь от них, мы даем своей психике возможность пересмотреть
+собственные застарелые сценарии, тупики и застревания.
+Мы упражняемся в воображении и креативности, активно сотрудничаем с ними,
+и со временем это становится привычкой.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="about-conclusion">
+
+<p>
+Не каждый из нас готов открывать душу другому человеку, но каждый может
+научиться читать так, чтобы чтение книг оживляло душу.
+</p>
+
+<p>
+Существует расхожее мнение, что в книгу убегают те, кто страшится реальности.
+Возможно, некоторые люди действительно используют чтение как убежище
+от трудностей и неприятностей. Литературная терапия поможет научиться
+находить в чтении ресурс справляться с жизнью.
+</p>
+
+</div>
+
+</div>
+</div>
+</section>
+<section class="deep-reading fade" id="deep-reading">
+<div class="container">
+
+<h2>О глубинном чтении</h2>
+
+<div class="deep-reading-content">
+
+<div class="deep-reading-intro">
+
+<p>
+По мере того, как растет восприимчивость нашего воображения к тому,
+что происходит в тексте, мы начинаем различать присутствие автора
+как «другого». С одной стороны, художественный вымысел автора,
+а с другой — всплывающие из внутреннего мира наши собственные истории.
+</p>
+
+<p>
+Условно говоря, с какого-то момента мы способны улавливать смысловую
+многослойность произведения: сюжет, переживания героев и атмосферу,
+жизненные темы, которые поднимает сама история, далее раскрывается
+смысл каждого эпизода.
+</p>
+
+<p>
+И он всегда наш собственный, уникальный и ощущается как ответы на вопросы:
+о чем эта история? Что для меня эта история? Как я проживаю подобные истории?
+</p>
+
+<p>
+А где-то в глубине нас таится также и символическое восприятие,
+благодаря которому фрагменты произведения становятся узнаваемыми,
+наполненными определенной энергией и уже универсальным смыслом.
+</p>
+
+<p>
+Чтобы овладеть навыком глубинного чтения, нужно научиться удерживать
+двойное внимание: внимание на том, как рассказывает историю автор,
+и внимание на том, что происходит с нами, когда мы представляем
+эту историю в своем воображении.
+</p>
+
+</div>
+
+
+<div class="deep-reading-layers">
+
+<div class="reading-layer">
+<div class="layer-number">01</div>
+<div class="layer-text">Сюжет — верхний слой произведения</div>
+</div>
+
+<div class="reading-layer">
+<div class="layer-number">02</div>
+<div class="layer-text">Психологическая реальность</div>
+</div>
+
+<div class="reading-layer">
+<div class="layer-number">03</div>
+<div class="layer-text">Наш личный опыт</div>
+</div>
+
+<div class="reading-layer">
+<div class="layer-number">04</div>
+<div class="layer-text">Мир символов и архетипов</div>
+</div>
+
+</div>
+
+
+<div class="deep-reading-conclusion">
+
+<p>
+<strong>Глубинное чтение</strong> — это медленное и рефлексивное чтение.
+</p>
+
+<p>
+Чтобы научиться глубинному чтению, важно не только читать,
+но и быть готовым встречаться с самим собой в процессе чтения.
+</p>
+
+</div>
+
+
+<div class="deep-reading-principles">
+
+<h3>
+Чтобы научиться глубинному чтению, нужно:
+</h3>
+
+<div class="principles-list">
+
+<div class="principle">
+<span class="principle-number">01</span>
+Любить читать.
+</div>
+
+<div class="principle">
+<span class="principle-number">02</span>
+Настроиться на «дисциплинированное» чтение.
+</div>
+
+<div class="principle">
+<span class="principle-number">03</span>
+Ценить себя настоящего, живого, уникального.
+</div>
+
+<div class="principle">
+<span class="principle-number">04</span>
+Желать чувствовать свою душу.
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+<section class="learning fade" id="learning">
+<div class="container">
+
+<h2>Как можно научиться глубинному чтению?</h2>
+
+<p class="learning-intro">
+Есть несколько способов погрузиться в практику глубинного чтения —
+в группе, индивидуально с психологом или вместе со слушателями подкаста.
+</p>
+
+
+<div class="learning-grid">
+
+
+<div class="learning-card">
+
+<h3>В группе глубинного чтения</h3>
+
+<p>
+В группе до 8 человек мы встречаемся онлайн один раз в неделю
+на 2 часа. Количество встреч зависит от объема произведения.
+Группа закрытая, пропуски оплачиваются.
+</p>
+
+<p class="learning-highlight">
+Сейчас работает группа глубинного чтения
+«Бегущей с волками» Клариссы Пинколы Эстес.
+</p>
+
+<p>
+В сентябре стартует группа глубинного чтения романа
+«Демиан» Германа Гессе.
+</p>
+
+<a class="btn"
+target="_blank"
+href="https://t.me/ninasun22?text=Здравствуйте!%20Хочу%20подать%20заявку%20на%20группу%20глубинного%20чтения.">
+Подать заявку
+</a>
+
+</div>
+
+
+<div class="learning-card">
+
+<h3>Индивидуальные сессии</h3>
+
+<p>
+Вы можете выбрать книгу и психолога и обучаться глубинному чтению
+на индивидуальных сессиях.
+</p>
+
+<p>
+Вместе мы будем исследовать текст, ваши внутренние отклики,
+ассоциации и личные смыслы, которые рождаются в процессе чтения.
+</p>
+
+<a class="btn"
+target="_blank"
+href="https://t.me/ninasun22?text=Здравствуйте!%20Хочу%20узнать%20об%20индивидуальных%20сессиях%20по%20глубинному%20чтению.">
+Подать заявку на предварительную встречу
+</a>
+
+</div>
+
+
+
+</div>
+<div class="upcoming-reading">
+
+<h3>Ближайшая группа</h3>
+
+<h4>Герман Гессе — «Демиан»</h4>
+
+<p>
+В сентябре стартует группа глубинного чтения романа Германа Гессе «Демиан».
+Это история о взрослении, поиске себя и встрече со своей внутренней тенью.
+</p>
+
+<p class="book-note">
+Можно оставить предварительную заявку на участие в группе.
+</p>
+
+<a class="btn"
+target="_blank"
+href="https://t.me/ninasun22?text=Здравствуйте!%20Хочу%20оставить%20предварительную%20заявку%20на%20группу%20глубинного%20чтения%20«Демиан».">
+Предварительная запись
+</a>
+
+</div>
+
+</div>
+</section>
+<section class="about-us fade" id="about-us">
+<div class="container">
+
+<h2>О нас</h2>
+
+<div class="psychologists-grid">
+
+
+<div class="psychologist-card">
+
+<img
+    src="kim.jpg"
+    alt="Валентина Ким"
+    class="psychologist-photo">
+
+<h3>Валентина Ким</h3>
+
+<p class="psychologist-role">
+Аналитический психолог, бизнес-психолог,
+переводчик книг по психологии
+</p>
+
+<p>
+Москва
+</p>
+
+<p>
+Индивидуальная работа и ведение тематических групп.
+</p>
+
+<a class="btn"
+href="https://taplink.cc/valentinakim"
+target="_blank">
+Визитка
+</a>
+
+</div>
+
+
+<div class="psychologist-card">
+
+<img
+    src="sun.jpg"
+    alt="Нина Дятловская"
+    class="psychologist-photo">
+
+<h3>Нина Дятловская</h3>
+
+<p class="psychologist-role">
+Аналитический психолог, нейрокоуч
+</p>
+
+<p>
+Минск
+</p>
+
+<p>
+Индивидуальная работа и ведение тематических групп.
+</p>
+
+<a class="btn"
+href="https://taplink.cc/ndyatlovskaya"
+target="_blank">
+Визитка
+</a>
+
+</div>
+
+
+</div>
+</div>
+</section>
+<section class="fade" id="books">
 <div class="container">
 
 <h2>Уже прочитали</h2>
@@ -331,9 +1263,18 @@ target="_blank">
 <p><strong>Линдсей Кларк</strong></p>
 
 <p>
-Алхимическое путешествие души через символы любви,
-смерти, преображения и обретения внутренней целостности.
+Алхимическое путешествие души через символы любви, смерти, преображения и обретения внутренней целостности.
 </p>
+
+<p class="book-note">
+Группа глубинного чтения по этой книге проводится повторно.
+</p>
+
+<a class="btn"
+target="_blank"
+href="https://t.me/ninasun22?text=Здравствуйте!%20Хочу%20подать%20заявку%20на%20повторную%20группу%20глубинного%20чтения%20«Химическая%20свадьба».">
+Подать заявку
+</a>
 
 </div>
 
@@ -349,9 +1290,18 @@ target="_blank">
 <p><strong>Кларисса Пинкола Эстес</strong></p>
 
 <p>
-Исследование архетипа Дикой Женщины через мифы,
-сказки и коллективное бессознательное.
+Исследование архетипа Дикой Женщины через мифы, сказки и коллективное бессознательное.
 </p>
+
+<p class="book-note">
+Группа глубинного чтения по этой книге проводится повторно.
+</p>
+
+<a class="btn"
+target="_blank"
+href="https://t.me/ninasun22?text=Здравствуйте!%20Хочу%20подать%20заявку%20на%20группу%20глубинного%20чтения%20«Бегущая%20с%20волками».">
+Подать заявку
+</a>
 
 </div>
 
@@ -362,27 +1312,6 @@ target="_blank">
 <section class="next-reading fade">
 <div class="container">
 
-<h2>Следующее чтение</h2>
-
-<div class="featured">
-
-<h3>Герман Гессе — «Демиан»</h3>
-
-<p style="margin:20px 0;">
-Приглашаем присоединиться к следующему циклу чтения и обсуждения романа Германа Гессе.
-Это история о взрослении, поиске себя и встрече со своей внутренней тенью.
-</p>
-
-<a class="btn"
-target="_blank"
-href="https://t.me/ninasun22?text=Здравствуйте!%20Хочу%20записаться%20на%20чтение%20Демиана.">
-Записаться через Telegram
-</a>
-
-</div>
-
-</div>
-</section>
 
 <section class="telegram-section fade">
 <div class="container">
@@ -403,32 +1332,59 @@ href="https://t.me/litera_therapy">
 </div>
 </section>
 
-<section class="fade">
+<section class="fade" id="podcasts">
 <div class="container">
 
 <h2>Подкасты</h2>
 
 <div class="podcast-card">
 
+<span class="coming-soon">
+ПИЛОТНЫЙ ВЫПУСК УЖЕ ДОСТУПЕН
+</span>
+
+<h3>
+Подкаст «Литературная терапия»
+</h3>
+
 <p>
 Мы начинаем серию подкастов о литературе, символическом мышлении
 и аналитической психологии.
-Здесь будут появляться записи обсуждений и размышления о книгах.
 </p>
 
-<br>
+<p>
+В каждом эпизоде мы будем вместе со слушателями практиковать
+глубинное чтение: исследовать отрывки художественных произведений,
+замечать символы и прислушиваться к тому, что происходит внутри нас
+во время чтения.
+</p>
+
+<div class="podcast-player">
+
+<iframe
+src="https://player.mave.digital?podcast=litera-therapy&episode=2&color=rgb(74,110,240)&mute=1&date=1&download=1"
+style="width:100%;"
+height="235"
+scrolling="no"
+frameborder="no">
+</iframe>
+
+</div>
+
+<p class="learning-highlight">
+Новый сезон стартует в сентябре.
+</p>
 
 <a class="btn"
 target="_blank"
 href="https://litera-therapy.mave.digital/">
-Слушать на Mave
+Все выпуски подкаста
 </a>
 
 </div>
 
 </div>
 </section>
-
 <footer>
 
 <h3>Литературная терапия</h3>
